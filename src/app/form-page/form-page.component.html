@@ -1,0 +1,27 @@
+
+<div class = "container">
+    <h1 class="text-center">PARA LA GRADUACION:</h1>
+    <form class="row"[formGroup]="graduacionForm">
+        <div class="mb-3 col-6">
+          <label class="form-label">Nombre</label>
+          <input formControlName="name" type="text" class="form-control"  placeholder="nombre">
+        </div>
+        <div class="mb-3 col-6">
+          <label for="exampleInputPassword1" class="form-label">Apellido</label>
+          <input formControlName= "firstName" type="text" class="form-control"  placeholder="Apellido">
+        </div>
+        <button (click)="sendData()" type="submit" class="btn btn-primary">Siguiente</button>
+    </form>
+
+    <div *ngIf="isError" class="alert alert-danger" role="alert">
+        Algo va mal! 
+    </div>
+
+    <ul class="list-group">
+        <li *ngFor="let alumno of arrGraduacion" class="list-group-item">#{{alumno.name}} - {{alumno.firstName}}</li>
+    </ul>
+
+
+</div>
+
+
